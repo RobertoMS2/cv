@@ -1,20 +1,206 @@
 body {
   margin: 0;
-  padding: 30px;
-  font-family: $font-family-sans-serif;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
+  padding: 0;
+  background-color: $primary-bg;
+  color: $primary-font;
+  font-size: 16px;
 }
 
-.uoc-logo {
+h1 { font-size: 3.5rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.2rem; }
+
+.h1--mod,
+h2 {
+  border-bottom: 2px solid $primary-grey-bg;
+  max-width: 400px;
+}
+
+.h1--mod::after,
+h2::after {
+  content: "";
+  position: relative;
+  bottom: -4px;
+  width: 40px;
+  height: 6px;
+  background-color: $secondary-font;
   display: block;
-  margin-bottom: 20px;
-  height: auto;
 }
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 36px;
-  font-weight: 700;
-  color: $uoc-corporate;
+header, #content, footer {
+  display: flex;
+  max-width: 1200px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+header {
+  h1, p {
+    transition: $basic-transition;
+  }
+
+  .h1--mod { 
+    font-size: 1.4rem; 
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: $basic-transition;
+  }
+
+  span {
+    color: $secondary-font;
+  }
+
+  #presentacion {
+    margin-top: 5rem;
+    padding-left: 2rem;
+    transition: $basic-transition;
+  }
+
+  #personal {
+    padding: 2rem;
+    background-color: $secondary-font;
+    color: $primary-bg;
+    transition: $basic-transition;
+
+    img {
+      width: 100%;
+      margin-bottom: 1rem;
+      transition: $basic-transition;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        padding: 0.5rem;
+      }
+    }
+  }
+}
+
+#content {
+
+  .left {
+    position: relative;
+    top: -50px;
+
+    .formacion {
+      background-color: $primary-grey-bg;
+      padding: 2rem 1rem 2rem 2rem;
+
+      .formacion__elem {
+        padding-bottom: 1rem;
+
+        span {
+          font-style: italic;
+        }
+
+        p {
+          margin: 0.25rem 0;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .habilidades {
+      background-color: $secondary-grey-bg;
+      padding: 2rem 1rem 2rem 2rem;
+
+      h2, span {
+        color: $primary-bg;
+      }
+
+      .habilidades__elem {
+        display: flex;
+        margin-bottom: 1rem;
+
+        span {
+          width: 40%;
+          text-transform: uppercase;
+        }
+
+        ul {
+          width: 60%;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          li {
+            float: left;
+            width: 20px;
+            margin: 0 5%;
+            background-color: #ff9900;
+            border-radius: 50%;
+            font-size: 0;
+            display: block;
+            height: 20px;
+          }
+
+          .no {
+            background-color: $primary-grey-bg;
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    position: relative;
+    top: 50px;
+
+    .experiencia {
+      .experiencia__elem {
+        h3 {
+          margin: 1rem 0 0 0;
+        }
+
+        span {
+          color: $secondary-font;
+          font-style: italic;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+/*
+ * Modificadores de comportamiento para el encabezado.
+ */
+header.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  background-color: $primary-bg;
+
+  #presentacion {
+    margin-top: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .h1--mod, 
+  p {
+    font-size: 0px;
+  }
+
+  #personal {
+    padding: 1rem;
+
+    img {
+      width: 75px;
+      margin-bottom: 0;
+    }
+
+    ul {
+      display: none;
+    }
+  }
+   
 }

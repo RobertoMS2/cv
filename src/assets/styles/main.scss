@@ -3,11 +3,20 @@
  * Do not include SCSS code in this file.
  */
 
+/*
+ * Import fonts
+ */
+@import "_fonts";
+
 /**
  * Import variables
  */
-
 @import "variables";
+
+/**
+ * Import box model for columns
+ */
+@import "_boxes";
 
 /**
  * Import npm dependencies

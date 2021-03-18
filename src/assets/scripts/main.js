@@ -9,8 +9,19 @@
 /**
  * Write any other JavaScript below
  */
-
 +( function() {
-  const university = "UOC";
-  console.log(`Hello, ${university}!`);
+  // Sticky functions
+  window.onscroll = function() {stickyF()};
+
+  var header = document.getElementById("header");
+  var sticky = header.offsetTop;
+
+  function stickyF() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky")
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
 } )();
+

@@ -1,0 +1,19 @@
+/**
+ * Comfortaa: Encabezados principales.
+ * Raleway: Encabezados de secciones.
+ * Montserrat: Textos en general.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat';
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Comfortaa';
+    margin: 1rem 0;
+}
+
+.specialFont {
+    font-family: 'Raleway';
+}
