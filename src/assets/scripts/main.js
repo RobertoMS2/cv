@@ -9,7 +9,7 @@
 /**
  * Write any other JavaScript below
  */
-+( function() {
+(function() {
   // Sticky functions
   window.onscroll = function() {stickyF()};
 
@@ -23,5 +23,5 @@
       header.classList.remove("sticky");
     }
   }
-} )();
+})();
 
