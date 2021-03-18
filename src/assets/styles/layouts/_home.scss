@@ -10,13 +10,13 @@ h1 { font-size: 3.5rem; }
 h2 { font-size: 1.6rem; }
 h3 { font-size: 1.2rem; }
 
-.h1--mod,
+.header--mod,
 h2 {
   border-bottom: 2px solid $primary-grey-bg;
   max-width: 400px;
 }
 
-.h1--mod::after,
+.header--mod::after,
 h2::after {
   content: "";
   position: relative;
@@ -40,7 +40,7 @@ header {
     transition: $basic-transition;
   }
 
-  .h1--mod { 
+  .header--mod { 
     font-size: 1.4rem; 
     text-transform: uppercase;
     font-weight: bold;
@@ -81,6 +81,44 @@ header {
   }
 }
 
+/*
+ * Modificadores de comportamiento para el encabezado.
+ */
+ .sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  background-color: $primary-bg;
+
+  #presentacion {
+    margin-top: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .header--mod, 
+  p {
+    font-size: 0px;
+  }
+
+  #personal {
+    padding: 1rem;
+
+    img {
+      width: 75px;
+      margin-bottom: 0;
+    }
+
+    ul {
+      display: none;
+    }
+  }
+}
+
+/* Contenido de la página */
 #content {
 
   .left {
@@ -109,7 +147,7 @@ header {
       background-color: $secondary-grey-bg;
       padding: 2rem 1rem 2rem 2rem;
 
-      h2, span {
+      h2 {
         color: $primary-bg;
       }
 
@@ -118,6 +156,7 @@ header {
         margin-bottom: 1rem;
 
         span {
+          color: $primary-bg;
           width: 40%;
           text-transform: uppercase;
         }
@@ -165,42 +204,4 @@ header {
       }
     }
   }
-}
-
-/*
- * Modificadores de comportamiento para el encabezado.
- */
-header.sticky {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1;
-  background-color: $primary-bg;
-
-  #presentacion {
-    margin-top: 1rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  .h1--mod, 
-  p {
-    font-size: 0px;
-  }
-
-  #personal {
-    padding: 1rem;
-
-    img {
-      width: 75px;
-      margin-bottom: 0;
-    }
-
-    ul {
-      display: none;
-    }
-  }
-   
 }
