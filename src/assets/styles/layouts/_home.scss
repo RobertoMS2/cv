@@ -267,6 +267,43 @@ footer {
 }
 
 @media screen and (max-width: 700px) {
+  /* Anulamos el comportamiento sticky */
+  .sticky {
+    position: relative;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    background-color: $primary-bg;
+
+    #presentacion {
+      margin-top: 1rem;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    .header--mod {
+      font-size: 1.4rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+
+    #personal {
+      padding: 2rem;
+
+      img {
+        width: 240px;
+        margin-bottom: 0;
+      }
+
+      ul {
+        display: block;
+      }
+    }
+  }
+
   #header {
     flex-wrap: wrap;
 
@@ -293,53 +330,12 @@ footer {
     }
   }
 
-  /* Anulamos el comportamiento sticky */
-  .sticky {
-    position: relative;
-    width: 100%;
-    top: 0;
-    z-index: 1;
-    background-color: $primary-bg;
-  
-    #presentacion {
-      margin-top: 1rem;
-    }
-  
-    h1 {
-      font-size: 3.5rem;
-    }
-  
-    .header--mod {
-      font-size: 1.4rem;
-    }
-    p {
-      font-size: 1rem;
-    }
-  
-    #personal {
-      padding: 2rem;
-  
-      img {
-        width: 240px;
-        margin-bottom: 0;
-      }
-  
-      ul {
-        display: block;
-      }
-    }
-  }
-
   .sticky + #content {
     padding-top: 1rem;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .sticky + #content {
-    padding-top: 0rem;
-  }
-
   #content {
     flex-wrap: wrap;
 
@@ -355,6 +351,10 @@ footer {
     .experiencia {
       padding: 2rem;
     }
+  }
+
+  .sticky + #content {
+    padding-top: 0rem;
   }
 }
 
