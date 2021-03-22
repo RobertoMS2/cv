@@ -2,13 +2,13 @@
 /* Do not include SCSS code in this file. */
 
 /* Import fonts */
-@import "_fonts";
+@import "fonts";
 
 /* Import variables */
 @import "variables";
 
 /* Import box model for columns */
-@import "_boxes";
+@import "boxes";
 
 // Import npm dependencies
 // see: https://v2.parceljs.org/features/module-resolution/

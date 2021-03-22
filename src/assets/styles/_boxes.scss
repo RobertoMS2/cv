@@ -1,4 +1,6 @@
-/* Modelo de cajas basado en un grid de 12 columnas */
+/* 
+ * Modelo de cajas basado en un grid de 12 columnas 
+ */
 .col    { float: left; padding: 0px 1.04167% 0 1.04167%; box-sizing: border-box; }
 .col-1  { width: 6.25%; }
 .col-2  { width: 14.58333333333333%; }
@@ -13,7 +15,9 @@
 .col-11 { width: 89.58333333333333%; }
 .col-12 { width: 97.91666666666667%; }
 
-/* Versiones sin padding */
+/* 
+ * Versiones sin padding 
+ */
 .col-np    { box-sizing: border-box; }
 .col-1-np  { width: 8.333333333333332%; padding: 0px; }
 .col-2-np  { width: 16.66666666666666%; padding: 0px; }

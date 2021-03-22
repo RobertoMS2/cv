@@ -4,17 +4,32 @@
  * Mixins
  */
 
+ // Centrar un contenido en horizontal
 @mixin center {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
 }
 
+// Crea una animación básica de transición para todos los navegadores
+@mixin addBasicTransition {
+  transition: $basic-transition;
+  -moz-transition: $basic-transition;
+  -webkit-transition: $basic-transition;
+  -o-transition: $basic-transition;
+}
+
+/*
+ * Modificaciones de colores para el body
+ */
 body {
   background-color: $primary-bg;
   color: $primary-font;
 }
 
+/*
+ * Estilo de subrayado para títulos de nivel 2
+ */
 .header--mod,
 h2 {
   border-bottom: 2px solid $primary-grey-bg;
@@ -32,22 +47,28 @@ h2::after {
   display: block;
 }
 
+/*
+ * Estilos comunes para cabecera y contenidos.
+ */
 header, #content {
   display: flex;
   max-width: 1200px;
   @include center;
 }
 
+/*
+ * Estilos del objeto cabecera
+ */
 header {
   h1, p {
-    transition: $basic-transition;
+    @include addBasicTransition;
   }
 
   .header--mod { 
     font-size: 1.4rem; 
     text-transform: uppercase;
     font-weight: bold;
-    transition: $basic-transition;
+    @include addBasicTransition;
   }
 
   span {
@@ -57,19 +78,19 @@ header {
   #presentacion {
     margin-top: 5rem;
     padding-left: 2rem;
-    transition: $basic-transition;
+    @include addBasicTransition;
   }
 
   #personal {
     padding: 2rem;
     background-color: $secondary-font;
     color: $primary-bg;
-    transition: $basic-transition;
+    @include addBasicTransition;
 
     img {
       width: 100%;
       margin-bottom: 1rem;
-      transition: $basic-transition;
+      @include addBasicTransition;
     }
 
     ul {
@@ -84,6 +105,7 @@ header {
 
 /*
  * Modificadores de comportamiento para el encabezado.
+ * Estas modificaciones dependen del comportamiento sticky de la cabecera.
  */
  .sticky {
   position: fixed;
@@ -119,14 +141,16 @@ header {
   }
 }
 
-/* Contenido de la página */
+/* 
+ * Contenido de la página 
+ */
 #content {
-  transition: $basic-transition;
+  @include addBasicTransition;
 
   .left {
     position: relative;
     top: -50px;
-    transition: $basic-transition;
+    @include addBasicTransition;
 
     .formacion {
       background-color: $primary-grey-bg;
@@ -192,7 +216,7 @@ header {
   .right {
     position: relative;
     top: 50px;
-    transition: $basic-transition;
+    @include addBasicTransition;
 
     .experiencia {
       .experiencia__elem {
@@ -210,6 +234,9 @@ header {
   }
 }
 
+/*
+ * Padding respecto al encabezado
+ */ 
 .sticky + #content {
   padding-top: 14rem;
 
@@ -222,6 +249,9 @@ header {
   }
 }
 
+/*
+ * Estilos del pié
+ */
 footer {
   display: block;
   margin: 2rem auto 0 auto;
@@ -236,6 +266,9 @@ footer {
   }
 }
 
+/*
+ * Aplicaición del RWD. Tamaño inferior a 1112px
+ */
 @media screen and (max-width: 1112px) {
   #presentacion {
     width: 100%;
@@ -256,6 +289,9 @@ footer {
   }
 }
 
+/*
+ * Aplicaición del RWD. Tamaño inferior a 800px
+ */
 @media screen and (max-width: 800px) {
   #content .left .habilidades .habilidades__elem {
     flex-wrap: wrap;
@@ -267,6 +303,9 @@ footer {
   }
 }
 
+/*
+ * Aplicaición del RWD. Tamaño inferior a 700px
+ */
 @media screen and (max-width: 700px) {
   /* Anulamos el comportamiento sticky */
   .sticky {
@@ -331,14 +370,12 @@ footer {
     }
   }
 
-  .sticky + #content {
-    padding-top: 1rem;
-  }
-}
-
-@media screen and (max-width: 700px) {
   #content {
     flex-wrap: wrap;
+
+    .left {
+      top: 0;
+    }
 
     .col {
       padding: 0;
@@ -359,6 +396,9 @@ footer {
   }
 }
 
+/*
+ * Aplicaición del RWD. Tamaño inferior a 500px
+ */
 @media screen and (max-width: 500px) {
   #header #personal {
     flex-wrap: wrap;
