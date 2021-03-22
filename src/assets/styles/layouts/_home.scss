@@ -1,14 +1,19 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: $primary-bg;
-  color: $primary-font;
-  font-size: 16px;
+@use '../base';
+
+/*
+ * Mixins
+ */
+
+@mixin center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-h1 { font-size: 3.5rem; }
-h2 { font-size: 1.6rem; }
-h3 { font-size: 1.2rem; }
+body {
+  background-color: $primary-bg;
+  color: $primary-font;
+}
 
 .header--mod,
 h2 {
@@ -30,9 +35,7 @@ h2::after {
 header, #content {
   display: flex;
   max-width: 1200px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  @include center;
 }
 
 header {
@@ -70,8 +73,6 @@ header {
     }
 
     ul {
-      margin: 0;
-      padding: 0;
       list-style: none;
 
       li {
