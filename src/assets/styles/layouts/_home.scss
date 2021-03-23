@@ -50,7 +50,7 @@ h2::after {
 /*
  * Estilos comunes para cabecera y contenidos.
  */
-header, #content {
+header, section {
   display: flex;
   max-width: 1200px;
   @include center;
@@ -144,7 +144,7 @@ header {
 /* 
  * Contenido de la página 
  */
-#content {
+section {
   @include addBasicTransition;
 
   .left {
@@ -237,7 +237,7 @@ header {
 /*
  * Padding respecto al encabezado
  */ 
-.sticky + #content {
+.sticky + section {
   padding-top: 14rem;
 
   .left {
@@ -282,7 +282,7 @@ footer {
     }
   }
 
-  #content .left .habilidades .habilidades__elem ul li {
+  section .left .habilidades .habilidades__elem ul li {
     width: 10%;
     padding-bottom: 10%;
     height: auto;
@@ -293,7 +293,7 @@ footer {
  * Aplicaición del RWD. Tamaño inferior a 800px
  */
 @media screen and (max-width: 800px) {
-  #content .left .habilidades .habilidades__elem {
+  section .left .habilidades .habilidades__elem {
     flex-wrap: wrap;
 
     span {
@@ -370,7 +370,7 @@ footer {
     }
   }
 
-  #content {
+  section {
     flex-wrap: wrap;
 
     .left {
@@ -391,7 +391,7 @@ footer {
     }
   }
 
-  .sticky + #content {
+  .sticky + section {
     padding-top: 0rem;
   }
 }
